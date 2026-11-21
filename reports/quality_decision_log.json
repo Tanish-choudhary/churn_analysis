@@ -1,0 +1,149 @@
+{
+  "deduplication": {
+    "exact_removed": 31,
+    "id_conflicts_resolved": 69
+  },
+  "missing": {
+    "MonthlyCharges": {
+      "action": "median_impute",
+      "value": 68.97,
+      "count": 200,
+      "rationale": "Numeric, low missingness (~2%), median robust to outliers"
+    },
+    "TotalCharges": {
+      "action": "contextual_impute",
+      "blanks_as_zero": 300,
+      "imputed_from_formula": 0,
+      "rationale": "Blanks = new customers (tenure=0) -> 0; others derived from tenure*MonthlyCharges"
+    },
+    "Dependents": {
+      "action": "mode_impute",
+      "value": "No",
+      "count": 150,
+      "rationale": "Categorical, low missingness, mode preserves class balance"
+    }
+  },
+  "categorical": {
+    "Churn": {
+      "before": {
+        "Yes": 6728,
+        "No": 2494,
+        "yes": 478,
+        "Y": 300
+      },
+      "after": {
+        "Yes": 7506,
+        "No": 2494
+      }
+    },
+    "Contract": {
+      "before": {
+        "Month-to-month": 3252,
+        "Two year": 3204,
+        "One year": 3045,
+        "month-to-month": 499
+      },
+      "after": {
+        "Month-to-month": 3751,
+        "Two year": 3204,
+        "One year": 3045
+      }
+    },
+    "PaymentMethod": {
+      "before": {
+        "Bank transfer (automatic)": 2477,
+        "Mailed check": 2472,
+        "Electronic check": 2433,
+        "Credit card (automatic)": 2418,
+        "electronic check": 200
+      },
+      "after": {
+        "Electronic check": 2633,
+        "Bank transfer (automatic)": 2477,
+        "Mailed check": 2472,
+        "Credit card (automatic)": 2418
+      }
+    },
+    "Dependents": {
+      "before": {
+        "No": 7026,
+        "Yes": 2974
+      },
+      "after": {
+        "No": 7026,
+        "Yes": 2974
+      }
+    },
+    "Partner": {
+      "before": {
+        "No": 5250,
+        "Yes": 4750
+      },
+      "after": {
+        "No": 5250,
+        "Yes": 4750
+      }
+    }
+  },
+  "outliers": {
+    "tenure": {
+      "lower": -36.0,
+      "upper": 108.0,
+      "count": 0,
+      "rationale": "IQR*1.5 rule, flagged for review not removal"
+    },
+    "MonthlyCharges": {
+      "lower": -29.731250000000003,
+      "upper": 167.51875,
+      "count": 2,
+      "rationale": "IQR*1.5 rule, flagged for review not removal"
+    },
+    "TotalCharges": {
+      "lower": -3072.9862500000004,
+      "upper": 7681.36375,
+      "count": 71,
+      "rationale": "IQR*1.5 rule, flagged for review not removal"
+    },
+    "tenure_negative": {
+      "count": 0,
+      "rationale": "Tenure cannot be negative"
+    },
+    "MonthlyCharges_negative": {
+      "count": 1,
+      "rationale": "Charges cannot be negative"
+    },
+    "TotalCharges_negative": {
+      "count": 0,
+      "rationale": "Charges cannot be negative"
+    }
+  },
+  "logical": {
+    "flagged_count": 27,
+    "mean_ratio": 1.00164548093229,
+    "rationale": "TotalCharges should roughly equal tenure * MonthlyCharges; large deviations indicate data entry errors"
+  },
+  "final_shape": [
+    10000,
+    18
+  ],
+  "final_dtypes": {
+    "CustomerID": "str",
+    "tenure": "Int64",
+    "MonthlyCharges": "float64",
+    "TotalCharges": "float64",
+    "Contract": "str",
+    "PaymentMethod": "str",
+    "Dependents": "str",
+    "Partner": "str",
+    "SeniorCitizen": "Int64",
+    "OnlineSecurity": "str",
+    "Churn": "str",
+    "tenure_outlier": "boolean",
+    "MonthlyCharges_outlier": "bool",
+    "TotalCharges_outlier": "bool",
+    "tenure_negative": "boolean",
+    "MonthlyCharges_negative": "bool",
+    "TotalCharges_negative": "bool",
+    "TotalCharges_logical_flag": "bool"
+  }
+}
