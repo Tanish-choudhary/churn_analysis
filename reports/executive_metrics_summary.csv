@@ -1,0 +1,65 @@
+Metric,Value,Source,Metric Definition,Verification Status
+Total Customers,10000,data/churn_clean.csv,"Count of unique CustomerID records after cleaning",VERIFIED
+Overall Churn Rate,75.06%,data/churn_clean.csv,"Percentage of customers with Churn = 'Yes'",VERIFIED
+Retention Rate,24.94%,data/churn_clean.csv,"Percentage of customers with Churn = 'No'",VERIFIED
+Monthly Recurring Revenue,$688743.66,data/customer_segmented.csv,"Sum of MonthlyCharges across all customers",VERIFIED
+High Risk Customer Count,1833,data/customer_segmented.csv,"Count of customers with Risk_Category = 'High Risk'",VERIFIED
+High Risk Customer Percentage,18.33%,data/customer_segmented.csv,"Percentage of customers with Risk_Category = 'High Risk'",VERIFIED
+Medium Risk Customer Count,5374,data/customer_segmented.csv,"Count of customers with Risk_Category = 'Medium Risk'",VERIFIED
+Medium Risk Customer Percentage,53.74%,data/customer_segmented.csv,"Percentage of customers with Risk_Category = 'Medium Risk'",VERIFIED
+Low Risk Customer Count,2793,data/customer_segmented.csv,"Count of customers with Risk_Category = 'Low Risk'",VERIFIED
+Low Risk Customer Percentage,27.93%,data/customer_segmented.csv,"Percentage of customers with Risk_Category = 'Low Risk'",VERIFIED
+Monthly Revenue at Risk (High Risk),$155849.04,data/customer_segmented.csv,"Sum of MonthlyCharges for customers with Risk_Category = 'High Risk'",VERIFIED
+Monthly Revenue at Risk (Medium Risk),$363049.32,data/customer_segmented.csv,"Sum of MonthlyCharges for customers with Risk_Category = 'Medium Risk'",VERIFIED
+Monthly Revenue at Risk (Low Risk),$169845.30,data/customer_segmented.csv,"Sum of MonthlyCharges for customers with Risk_Category = 'Low Risk'",VERIFIED
+
+Segment: Senior Vulnerable - Customer Count,1546,reports/segment_summary.csv,"Number of customers in Senior Vulnerable segment",VERIFIED
+Segment: Senior Vulnerable - Customer Share,15.46%,reports/segment_summary.csv,"Percentage of total customers in Senior Vulnerable segment",VERIFIED
+Segment: Senior Vulnerable - Historical Churn Rate,75.03%,reports/segment_summary.csv,"Percentage of Senior Vulnerable customers with Churn = 'Yes'",VERIFIED
+Segment: Senior Vulnerable - Avg Monthly Charges,$67.17,reports/segment_summary.csv,"Mean MonthlyCharges for Senior Vulnerable segment",VERIFIED
+Segment: Senior Vulnerable - Avg Tenure,34.72 months,reports/segment_summary.csv,"Mean tenure for Senior Vulnerable segment",VERIFIED
+Segment: Senior Vulnerable - Avg Risk Score,46.99,reports/segment_summary.csv,"Mean Risk_Score for Senior Vulnerable segment",VERIFIED
+Segment: Senior Vulnerable - % High Risk,25.87%,reports/segment_summary.csv,"Percentage of Senior Vulnerable with Risk_Category = 'High Risk'",VERIFIED
+
+Segment: Budget-Conscious - Customer Count,3151,reports/segment_summary.csv,"Number of customers in Budget-Conscious segment",VERIFIED
+Segment: Budget-Conscious - Customer Share,31.51%,reports/segment_summary.csv,"Percentage of total customers in Budget-Conscious segment",VERIFIED
+Segment: Budget-Conscious - Historical Churn Rate,75.25%,reports/segment_summary.csv,"Percentage of Budget-Conscious customers with Churn = 'Yes'",VERIFIED
+Segment: Budget-Conscious - Avg Monthly Charges,$59.49,reports/segment_summary.csv,"Mean MonthlyCharges for Budget-Conscious segment",VERIFIED
+Segment: Budget-Conscious - Avg Tenure,28.76 months,reports/segment_summary.csv,"Mean tenure for Budget-Conscious segment",VERIFIED
+Segment: Budget-Conscious - Avg Risk Score,45.14,reports/segment_summary.csv,"Mean Risk_Score for Budget-Conscious segment",VERIFIED
+Segment: Budget-Conscious - % High Risk,23.87%,reports/segment_summary.csv,"Percentage of Budget-Conscious with Risk_Category = 'High Risk'",VERIFIED
+
+Segment: High-Value Long-Term - Customer Count,2343,reports/segment_summary.csv,"Number of customers in High-Value Long-Term segment",VERIFIED
+Segment: High-Value Long-Term - Customer Share,23.43%,reports/segment_summary.csv,"Percentage of total customers in High-Value Long-Term segment",VERIFIED
+Segment: High-Value Long-Term - Historical Churn Rate,76.23%,reports/segment_summary.csv,"Percentage of High-Value Long-Term customers with Churn = 'Yes'",VERIFIED
+Segment: High-Value Long-Term - Avg Monthly Charges,$91.76,reports/segment_summary.csv,"Mean MonthlyCharges for High-Value Long-Term segment",VERIFIED
+Segment: High-Value Long-Term - Avg Tenure,56.23 months,reports/segment_summary.csv,"Mean tenure for High-Value Long-Term segment",VERIFIED
+Segment: High-Value Long-Term - Avg Risk Score,41.56,reports/segment_summary.csv,"Mean Risk_Score for High-Value Long-Term segment",VERIFIED
+Segment: High-Value Long-Term - % High Risk,13.15%,reports/segment_summary.csv,"Percentage of High-Value Long-Term with Risk_Category = 'High Risk'",VERIFIED
+
+Segment: New Vulnerable - Customer Count,2960,reports/segment_summary.csv,"Number of customers in New Vulnerable segment",VERIFIED
+Segment: New Vulnerable - Customer Share,29.60%,reports/segment_summary.csv,"Percentage of total customers in New Vulnerable segment",VERIFIED
+Segment: New Vulnerable - Historical Churn Rate,73.95%,reports/segment_summary.csv,"Percentage of New Vulnerable customers with Churn = 'Yes'",VERIFIED
+Segment: New Vulnerable - Avg Monthly Charges,$61.64,reports/segment_summary.csv,"Mean MonthlyCharges for New Vulnerable segment",VERIFIED
+Segment: New Vulnerable - Avg Tenure,28.43 months,reports/segment_summary.csv,"Mean tenure for New Vulnerable segment",VERIFIED
+Segment: New Vulnerable - Avg Risk Score,38.15,reports/segment_summary.csv,"Mean Risk_Score for New Vulnerable segment",VERIFIED
+Segment: New Vulnerable - % High Risk,12.60%,reports/segment_summary.csv,"Percentage of New Vulnerable with Risk_Category = 'High Risk'",VERIFIED
+
+Churn by Contract: Month-to-month,74.65%,data/customer_segmented.csv,"Churn rate for Month-to-month contract customers",VERIFIED
+Churn by Contract: One year,75.07%,data/customer_segmented.csv,"Churn rate for One year contract customers",VERIFIED
+Churn by Contract: Two year,75.53%,data/customer_segmented.csv,"Churn rate for Two year contract customers",VERIFIED
+
+Churn by Tenure Q1 (0-12 mo),75.88%,data/customer_segmented.csv,"Churn rate for lowest tenure quartile",VERIFIED
+Churn by Tenure Q2 (12-28 mo),73.71%,data/customer_segmented.csv,"Churn rate for second tenure quartile",VERIFIED
+Churn by Tenure Q3 (28-50 mo),73.81%,data/customer_segmented.csv,"Churn rate for third tenure quartile",VERIFIED
+Churn by Tenure Q4 (50+ mo),76.76%,data/customer_segmented.csv,"Churn rate for highest tenure quartile",VERIFIED
+
+K-Means Clusters,4,notebooks/segmentation_and_risk_model_executed.ipynb,"Number of clusters selected via Elbow/Silhouette",VERIFIED
+Silhouette Score,0.176,notebooks/segmentation_and_risk_model_executed.ipynb,"Silhouette coefficient for K=4 clustering",VERIFIED
+PCA Explained Variance (2 components),44.4%,notebooks/segmentation_and_risk_model_executed.ipynb,"Variance explained by first 2 PCA components",VERIFIED
+
+Illustrative: 10% Churn Reduction - Customers Retained,183,Calculated,"10% of 1,833 High Risk customers",ILLUSTRATIVE
+Illustrative: 10% Churn Reduction - Monthly Revenue Preserved,$15500,Calculated,"183 retained x ~$85 avg monthly",ILLUSTRATIVE
+Illustrative: 10% Churn Reduction - Annual Revenue Preserved,$186000,Calculated,"Monthly x 12 months",ILLUSTRATIVE
+Illustrative: Total Pilot Investment,$750000,reports/recommendation_memo.md,"Sum of estimated initiative costs",ILLUSTRATIVE
+Illustrative: Year-1 ROI,4x,Calculated,"$2M estimated return / $750K investment",ILLUSTRATIVE
